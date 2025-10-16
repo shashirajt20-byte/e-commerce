@@ -1,11 +1,7 @@
 import prisma from "@/app/services/prismaClient";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, { searchParams }: {
-    searchParams: {
-        id: string
-    }
-}) {
+export async function GET(req: NextRequest) {
     const sp = req.nextUrl.searchParams;
     const query = sp.get("q");
     const min = sp.get("min");
