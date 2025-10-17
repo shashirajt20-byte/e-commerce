@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest){
     try {
         const body = await req.json();
-        const {email, username, name, avatar}=body;
+        const {email, username, name, avatar,password}=body;
 
         if(!username||!email){
             return NextResponse.json({
@@ -31,7 +31,8 @@ export async function POST(req: NextRequest){
                     username,
                     email,
                     name,
-                    avatar
+                    avatar,
+                    password
                 }
             });
             return NextResponse.json({
