@@ -206,6 +206,12 @@ export async function addProdToCart(item : any){
             redirect("/signin");
         }
         const data = verifyToken(token);
+        if(!data){
+            return{
+                success : false,
+                message : "Invalid or expired token!"
+            }
+        }
         const userId = data.id;
         const existingItem = await prisma.cart.findFirst({
             where : {
