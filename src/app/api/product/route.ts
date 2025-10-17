@@ -17,7 +17,8 @@ export async function POST(req: NextRequest){
         description : body.description,
         price : body.price,
         image : body.image,
-        rating : 1
+        rating : 1,
+        category : body.category
     }
     const product = await prisma.product.create({
         data : productToSave
