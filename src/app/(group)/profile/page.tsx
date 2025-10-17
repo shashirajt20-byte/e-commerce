@@ -6,12 +6,15 @@ import AddProd from "../../components/addProdBtn";
 
 export default async function Page() {
     const cookie = await cookies();
-    if (!cookie.get('token')?.value) redirect("/signin")
-    console.log(cookie.get('token'))
-    const data = verifyToken(cookie.get('token')?.value)
+    // if (!cookie.get('token')?.value) redirect("/signin")
+    // console.log(cookie.get('token'))
+    // const data = verifyToken(cookie.get('token')?.value)
+    const token = cookie.get('token')?.value;
+    if(!token) redirect("/signin");
+    const data = verifyToken(token);
     const user = await prisma.user.findUnique({
         where: {
-            id: data.id
+            id: data?.id
         },
         omit: {
             password: true
