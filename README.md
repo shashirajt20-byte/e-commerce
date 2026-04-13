@@ -26,15 +26,15 @@
 
 ### 🏠 Home Page
 
-![Home](./screenshots/home.png)
+![Home](home.png)
 
 ### 🛍️ Product Listing
 
-![Products](./screenshots/products.png)
+![Products](product.png)
 
 ### 🛒 Cart Page
 
-![Cart](./screenshots/cart.png)
+![Cart](cart.png)
 
 ---
 
